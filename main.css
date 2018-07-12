@@ -22,6 +22,11 @@ body {
     margin-right: auto;
     width: 70%;
   }
+
+  /* ol {
+    text-align: center;
+    list-style-position: inside;
+  } */
     
    /* main {
       display: grid;
