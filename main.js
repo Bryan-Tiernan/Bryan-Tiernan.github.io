@@ -1,20 +1,23 @@
+// const sourceSelector = document.querySelector('#sourceSelector');
 const main = document.querySelector('main');
+// const defaultSource = 'BTC';
 window.addEventListener('load', async e =>{
     updateCoins(); 
 });
 
+// setInterval(updateCoins(), 10000);
+
 async function updateCoins() {
-    const res = await fetch('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR');
-    const json = await res.json(); 
-    var bitCoinUSD = new Object(); 
-    bitCoinUSD = json.BTC;
-    main.innerHTML = bitCoinUSD.map(putMain).join('\n');
+    const res = await fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD,EUR');
+    const json = await res.json();
+    main.innerHTML = putMain(json);
 }
 
 function putMain(coin){
     return `
-        <div class ="Bitcoin">
-            <p>Price of Bitcoin = $${coin.USD}</p>
+        <div class ="coin">
+            <h3>${coin.RAW.BTC.USD.FROMSYMBOL} ${coin.DISPLAY.BTC.USD.FROMSYMBOL} </h3>
+            <p>Bitcoin Price = ${coin.DISPLAY.BTC.EUR.PRICE}  ---->  ${coin.DISPLAY.BTC.USD.PRICE}</p>
         </div>
         `;
 }
