@@ -16,7 +16,7 @@ async function updateCoins() {
 function putMain(coin){
     return `
         <div class ="coin">
-            <h3>${coin.RAW.BTC.USD.FROMSYMBOL} ${coin.DISPLAY.BTC.USD.FROMSYMBOL} </h3>
+            <h4>${coin.RAW.BTC.USD.FROMSYMBOL} ${coin.DISPLAY.BTC.USD.FROMSYMBOL} </h4>
             <p>Bitcoin Price = ${coin.DISPLAY.BTC.EUR.PRICE}  ---->  ${coin.DISPLAY.BTC.USD.PRICE}</p>
         </div>
         `;
