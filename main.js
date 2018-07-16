@@ -6,7 +6,8 @@ window.addEventListener('load', async e =>{
 async function updateCoins() {
     const res = await fetch('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH&tsyms=USD,EUR');
     const json = await res.json(); 
-    const bitCoinUSD = json.BTC.USD;
+    var bitCoinUSD = new Object(); 
+    bitCoinUSD = json.BTC;
     main.innerHTML = bitCoinUSD.map(putMain).join('\n');
 }
 
