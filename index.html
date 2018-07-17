@@ -9,9 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>
-            Bryan Tiernan
-        </h1>
+        <h1>Bryan Tiernan</h1>
     </header>
 
     <img id="Headshot" src="./Images/beagle.jpg"> 
@@ -24,6 +22,21 @@
         </p>
     </div>
 
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "monstercat"
+      });
+    </script>
+    
     <div class="Links">
         <h2>Links</h2>
             <ol style="list-style-type:none">

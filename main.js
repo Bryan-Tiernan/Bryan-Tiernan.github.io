@@ -1,16 +1,15 @@
-// const sourceSelector = document.querySelector('#sourceSelector');
 const main = document.querySelector('main');
-// const defaultSource = 'BTC';
 window.addEventListener('load', async e =>{
+    console.log('load event');
     updateCoins(); 
 });
 
-// setInterval(updateCoins(), 10000);
 
 async function updateCoins() {
     const res = await fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD,EUR');
     const json = await res.json();
     main.innerHTML = putMain(json);
+    console.log('Entered Update Coins');
 }
 
 function putMain(coin){
@@ -21,3 +20,15 @@ function putMain(coin){
         </div>
         `;
 }
+
+//To use setinterval Asynchronously
+var promise = Promise.resolve(true); 
+
+setInterval(function() {
+    promise = promise.then(function () {
+        return new Promise(function (resolve) {
+            console.log('setinterval promise working');
+            updateCoins();
+        });
+    }); 
+}, 10000);
