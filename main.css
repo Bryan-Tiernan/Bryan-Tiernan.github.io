@@ -26,7 +26,8 @@ body {
 
    ol {
      display: block;
-    text-align: center;
+     text-align: center;
+     list-style: none;
   } 
     
    /* main {
