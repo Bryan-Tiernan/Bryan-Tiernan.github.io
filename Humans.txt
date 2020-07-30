@@ -1,0 +1,4 @@
+/* THANKS */
+
+    Jacob Martinez, creator of the gatsby template from which this site was made 
+    Github: https://github.com/cobidev
